@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brlddsdpw6j7h"]
+
+[ext_resource type="Texture2D" uid="uid://boosans7yj8wc" path="res://npc/train/train.png" id="1_4cyt5"]
+[ext_resource type="Script" uid="uid://dko3p4pes8oo1" path="res://npc/train/train.gd" id="1_rches"]
+[ext_resource type="PackedScene" uid="uid://bn27k8utq1opr" path="res://interactable/interactable.tscn" id="2_1dmb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dmb6"]
+size = Vector2(128, 16)
+
+[node name="Train" type="StaticBody2D" unique_id=1179276612]
+script = ExtResource("1_rches")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515173315]
+texture = ExtResource("1_4cyt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1026852549]
+shape = SubResource("RectangleShape2D_1dmb6")
+
+[node name="Interactable" parent="." unique_id=1378302807 instance=ExtResource("2_1dmb6")]

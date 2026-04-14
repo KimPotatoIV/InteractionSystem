@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://basak41s56bsl"]
+
+[ext_resource type="Script" uid="uid://dnfryc4tnvuyh" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://caurniq27kiyw" path="res://player/player_idle.png" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://bkkje6kc56ohi" path="res://player/player_moving.png" id="2_rkbax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yw30f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1dw6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjkh3")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjkh3"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1dw6"]
+radius = 8.0
+height = 20.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1782392886]
+script = ExtResource("1_g1dw6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1269821127]
+sprite_frames = SubResource("SpriteFrames_yw30f")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1835864926]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_qjkh3")
+
+[node name="Detector" type="Area2D" parent="." unique_id=1512223575]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=47995373]
+shape = SubResource("CapsuleShape2D_g1dw6")

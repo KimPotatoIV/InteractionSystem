@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bn27k8utq1opr"]
+
+[ext_resource type="Script" uid="uid://t4c1y1v1ld6v" path="res://interactable/interactable.gd" id="1_8p6r8"]
+
+[node name="Interactable" type="Area2D" unique_id=1378302807]
+script = ExtResource("1_8p6r8")

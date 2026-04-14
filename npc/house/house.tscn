@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://btlfoymrcsses"]
+
+[ext_resource type="Texture2D" uid="uid://duyyt63w666ub" path="res://npc/house/house.png" id="1_6xeli"]
+[ext_resource type="Script" uid="uid://udefj537cp1n" path="res://npc/house/house.gd" id="1_11kkf"]
+[ext_resource type="PackedScene" uid="uid://bn27k8utq1opr" path="res://interactable/interactable.tscn" id="2_hllsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hllsy"]
+size = Vector2(48, 88)
+
+[node name="House" type="StaticBody2D" unique_id=1445706567]
+script = ExtResource("1_11kkf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=755387893]
+texture = ExtResource("1_6xeli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153100831]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_hllsy")
+
+[node name="Interactable" parent="." unique_id=1378302807 instance=ExtResource("2_hllsy")]

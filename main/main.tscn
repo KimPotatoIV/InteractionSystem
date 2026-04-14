@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dw08dryoil8a7"]
+
+[ext_resource type="PackedScene" uid="uid://dsuclws612mem" path="res://terrain/terrain.tscn" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://basak41s56bsl" path="res://player/player.tscn" id="2_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://btlfoymrcsses" path="res://npc/house/house.tscn" id="3_c651c"]
+[ext_resource type="PackedScene" uid="uid://brlddsdpw6j7h" path="res://npc/train/train.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://cp00ccjos005" path="res://npc/tree/tree.tscn" id="4_3wy1v"]
+
+[node name="Main" type="Node2D" unique_id=81286699]
+
+[node name="Terrain" parent="." unique_id=1525314468 instance=ExtResource("1_53q0u")]
+
+[node name="NPC" type="Node2D" parent="." unique_id=1184375470]
+
+[node name="Train" parent="NPC" unique_id=1179276612 instance=ExtResource("3_xwkvk")]
+position = Vector2(255, 39)
+
+[node name="House" parent="NPC" unique_id=1445706567 instance=ExtResource("3_c651c")]
+position = Vector2(128, 128)
+
+[node name="Tree" parent="NPC" unique_id=1252819035 instance=ExtResource("4_3wy1v")]
+position = Vector2(480, 256)
+
+[node name="Player" parent="." unique_id=1782392886 instance=ExtResource("2_pjrb6")]
+position = Vector2(320, 180)
