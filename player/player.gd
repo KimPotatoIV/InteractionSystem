@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 ##################################################
-const MOVING_SPEED = 100.0
+const MOVING_SPEED = 50.0
 
 """ Detector 영역 내에 들어온 상호작용 대상들을 저장 """
 var interactable_list: Array[Interactable] = []
@@ -42,6 +42,9 @@ func _on_detector_area_entered(area: Area2D) -> void:
 	if area is Interactable:
 		if not interactable_list.has(area):
 			interactable_list.append(area)
+	
+	# 디버깅용
+	print(interactable_list)
 
 ##################################################
 """ Detector 영역에서 벗어난 Interactable을 리스트에서 제거 """
@@ -49,6 +52,9 @@ func _on_detector_area_exited(area: Area2D) -> void:
 	if area is Interactable:
 		if interactable_list.has(area):
 			interactable_list.erase(area)
+	
+	# 디버깅용
+	print(interactable_list)
 
 ##################################################
 """ 감지된 대상 중 가장 가까운 Interactable을 반환 """

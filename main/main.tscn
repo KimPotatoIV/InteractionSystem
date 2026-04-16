@@ -18,8 +18,11 @@ position = Vector2(255, 39)
 [node name="House" parent="NPC" unique_id=1445706567 instance=ExtResource("3_c651c")]
 position = Vector2(128, 128)
 
-[node name="Tree" parent="NPC" unique_id=1252819035 instance=ExtResource("4_3wy1v")]
+[node name="Tree1" parent="NPC" unique_id=1252819035 instance=ExtResource("4_3wy1v")]
 position = Vector2(480, 256)
+
+[node name="Tree2" parent="NPC" unique_id=297253136 instance=ExtResource("4_3wy1v")]
+position = Vector2(460, 256)
 
 [node name="Player" parent="." unique_id=1782392886 instance=ExtResource("2_pjrb6")]
 position = Vector2(320, 180)
